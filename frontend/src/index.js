@@ -11,6 +11,7 @@ import ErrorPage from "./error/error-page";
 import Main, {loader as rootLoader} from "./routes/main";
 import Detail from "./routes/detail";
 import Login from "./routes/login";
+import ReportDetail from "./routes/reportdetail"
 
 const router = createBrowserRouter([
     {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
             {
                 path: "/login",
                 element: <Login />,
+            },
+            {
+                path: "/report/:date",
+                element: <ReportDetail />,
             },
         ]
     },
