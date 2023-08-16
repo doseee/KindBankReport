@@ -8,9 +8,10 @@ import {
     RouterProvider
 } from "react-router-dom";
 import ErrorPage from "./error/error-page";
-import Main, {loader as rootLoader} from "./routes/main";
-import Detail from "./routes/detail";
-import Login from "./routes/login";
+import Main, {loader as rootLoader} from "./routes/Main";
+import Detail from "./routes/Detail";
+import Login from "./routes/Login";
+import ReportDetail from "./routes/ReportDetail"
 
 const router = createBrowserRouter([
     {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
             {
                 path: "/login",
                 element: <Login />,
+            },
+            {
+                path: "/report/:date",
+                element: <ReportDetail />,
             },
         ]
     },
