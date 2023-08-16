@@ -24,9 +24,9 @@ public class Report {
   private News news;
   @Column(name = "news_date")
   private LocalDate newsDate;
-  @Column( length = 1000)
-  private String title;
   @Column(length = 1000)
+  private String title;
+  @Column(length = 2000)
   private String summary;
   @Column(length = 1000)
   private String question;

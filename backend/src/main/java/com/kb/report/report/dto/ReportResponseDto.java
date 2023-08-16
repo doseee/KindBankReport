@@ -7,6 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ReportResponseDto {
+  private int reportId;
   private String title;
   private String summary;
   private String question;
@@ -15,6 +16,7 @@ public class ReportResponseDto {
   private String explanation;
 
   public ReportResponseDto(Report entity) {
+    this.reportId = entity.getId();
     this.title = entity.getTitle();
     this.summary = entity.getSummary();
     this.question = entity.getQuestion();
