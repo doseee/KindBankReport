@@ -1,8 +1,8 @@
 import './App.css';
 import {Nav, Navbar, Container, NavDropdown} from "react-bootstrap";
 import {Outlet, useLoaderData} from "react-router-dom";
-import Main from "./routes/main";
-import Header from "./component/header";
+import Main from "./routes/Main";
+import Header from "./component/Header";
 import data from "./data";
 
 // export async function loader() {

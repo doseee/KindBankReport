@@ -1,7 +1,7 @@
 import {Container, Row, Col, Form, Button} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
 import {useState, useRef} from "react";
-import Header from "../component/header";
+import Header from "../component/Header";
 
 
 export default function Login() {
