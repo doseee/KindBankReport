@@ -12,6 +12,7 @@ import Main, {loader as rootLoader} from "./routes/Main";
 import Detail from "./routes/Detail";
 import Login from "./routes/Login";
 import ReportDetail from "./routes/ReportDetail"
+import QuizBookMarks from "./routes/QuizBookMarks";
 
 const router = createBrowserRouter([
     {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
                 path: "/report/:date",
                 element: <ReportDetail />,
             },
+            {
+                path: "/quiz/1",
+                element: <QuizBookMarks />,
+            }
         ]
     },
 ])
