@@ -23,12 +23,12 @@ const router = createBrowserRouter([
                 index: true,
                 // path: "/main",
                 element: <Main/>,
-                loader: rootLoader,
+                // loader: rootLoader,
             },
             {
                 path: "/main",
                 element: <Main />,
-                loader: rootLoader,
+                // loader: rootLoader,
             },
             {
                 path: "detail/:detailId",

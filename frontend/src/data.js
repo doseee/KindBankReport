@@ -2,9 +2,9 @@
 // let b = 20;
 // // export default a;
 // export {a, b}
-import h1 from './img/h1.jpg'
-import h2 from './img/h2.jpg'
-import h3 from './img/h3.jpg'
+import h1 from './assets/h1.jpg'
+import h2 from './assets/h2.jpg'
+import h3 from './assets/h3.jpg'
 
 let data = [
     {
