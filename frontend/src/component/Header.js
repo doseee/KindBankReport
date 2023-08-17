@@ -29,14 +29,10 @@ function Header() {
                     {
                         localStorage.getItem('userId')
                         ? <Nav className="me-auto">
-                                <Nav.Link to={'report/' + dateString}>daily-report</Nav.Link>
-                                <Nav.Link href="#link">quiz</Nav.Link>
+                                <Nav.Link href={'report/' + dateString}>daily-report</Nav.Link>
+                                <Nav.Link href="/quiz/1">bookmark</Nav.Link>
                                 <NavDropdown title="my page" id="basic-nav-dropdown">
-                                    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.2">
-                                        Another action
-                                    </NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                                    <NavDropdown.Item href="/quiz/1">My bookmark</NavDropdown.Item>
                                     <NavDropdown.Divider/>
                                     <NavDropdown.Item onClick={logout}>
                                         Logout
