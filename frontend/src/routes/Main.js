@@ -1,22 +1,15 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Col, Container, Row} from "react-bootstrap";
-// import Cards from "../component/card";
-import {useLoaderData, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 import data from "../data";
 import Header from "../component/Header";
-import ReportSrc from '../img/report.png'
-import * as styles from "../style/Styles"
+import ReportSrc from '../assets/report.png'
+import * as styles from "../styles/Styles"
 import SlideShow from "../component/SlideShow";
 import ModalContent from "../component/ModalContent"
 import Modal from "react-modal";
 
-export async function loader() {
-    const shoes = data;
-    return {shoes};
-}
-
 export default function Main(props) {
-    // const {shoes} = useLoaderData();
 
     var today = new Date();
 
@@ -28,16 +21,22 @@ export default function Main(props) {
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
-    // const showModal = () => {
-    //     setModalOpen(true);
-    // }
+
+    useEffect(() => {
+        // 컴포넌트가 마운트되었을 때 스크롤 숨김
+        document.body.style.overflow = "hidden";
+
+        // 컴포넌트가 언마운트되었을 때 스크롤 복원
+        return () => {
+            document.body.style.overflow = "auto";
+        };
+    }, []);
 
     return (
         <>
             <Header/>
             <styles.MainBgContainer className="main-bg">
                 <Container>
-                    {/*{modalOpen && <ReportModal setModalOpen={setModalOpen}/>}*/}
                     <Modal
                         isOpen={modalIsOpen}
                         onRequestClose={() => setModalIsOpen(false)}
@@ -56,15 +55,16 @@ export default function Main(props) {
                                 right: '30%',
                                 bottom: '10%',
                                 border: 'none',
-                                background: 'rgb(252, 175, 23)',
+                                background: 'rgba(244, 238, 221, 1)',
                                 overflow: 'auto',
                                 WebkitOverflowScrolling: 'touch',
                                 borderRadius: '15px',
                                 outline: 'none',
                                 padding: '4% 4% 1% 4%',
                                 boxShadow: '8px 16px 16px hsl(0deg 0% 0% / 0.25)',
-                            }}}>
-                        <ModalContent setModalIsOpen={setModalIsOpen}/>
+                            }}}
+                    className="non-scroll">
+                        <ModalContent setModalIsOpen={setModalIsOpen} textAlign={"center"}/>
                     </Modal>
                     <Row className="justify-content-around">
                         <Col sm={4}>
@@ -93,13 +93,6 @@ export default function Main(props) {
                     </Row>
                 </Container>
             </styles.MainBgContainer>
-            {/*<Container style={{ paddingTop: '5%' }}>*/}
-            {/*    <Row>*/}
-            {/*        {shoes.map((a, i) => (*/}
-            {/*            <Cards shoes={shoes[i]} key={i}></Cards>*/}
-            {/*        ))}*/}
-            {/*    </Row>*/}
-            {/*</Container>*/}
         </>
     );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import * as styles from "../style/Styles"
+import * as styles from "../styles/Styles"
 
 function ReportModal ({ setModalOpen, id, title, content, date }: PropsType) {
     const closeModal = () => {
