@@ -69,8 +69,8 @@ export default function ModalContent({setModalIsOpen, textAlign, pageState, arti
     function TitleState() {
         if (pageState === 1) {
             return (
-                <Row style={{color: `#3b3b3b`, fontSize: `30px`}} className="kb-font-color sliding-title">Kind Bank
-                    Daily Report
+                <Row style={{color: `#3b3b3b`, fontSize: `30px`}} className="kb-font-color sliding-title">
+                    Kind Bank Daily Report
                 </Row>
             )
         }
