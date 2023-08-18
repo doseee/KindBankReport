@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import fetchYouTubeVideos from "../services/fetchYouTubeVideo";
+import fetchYouTubeVideos from "../services/fetchYouTubeVideoApi";
 import {Col, Row} from "react-bootstrap";
 import Loading from "./Loading";
 

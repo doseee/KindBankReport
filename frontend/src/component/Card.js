@@ -1,23 +1,19 @@
-import {Col} from "react-bootstrap";
-import {Link} from "react-router-dom";
+import {Col, Row} from "react-bootstrap";
+import React from "react";
 
-function Cards(props) {
-    const shoes = {
-        id: props.shoes.id,
-        title: props.shoes.title,
-        content: props.shoes.content,
-        price: props.shoes.price,
-        img: props.shoes.img,
-    }
+function Card(props) {
+
     return (
-        <Link to={'detail/' + shoes.id}>
-            <Col>
-                <div style={{backgroundImage: 'url(' + shoes.img + ')', height: 200, backgroundSize: "cover"}}/>
-                <h4>{shoes.title}</h4>
-                <p>{shoes.content}</p>
+        <Row className="text-box article-box justify-content-center" style={{
+            height: `130px`,
+            width: `80%`,
+            margin: `30px`,
+        }}>
+            <Col className="text-box" style={{textAlign: 'left'}}>
+                {props.bookmark}
             </Col>
-        </Link>
+        </Row>
     )
 }
 
-export default Cards;
+export default Card;

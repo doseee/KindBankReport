@@ -1,7 +1,8 @@
 import {Container, Row, Col, Form, Button} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
-import {useState, useRef} from "react";
+import {useState} from "react";
 import Header from "../component/Header";
+import loginApi from "../services/loginApi";
 
 
 export default function Login() {
@@ -9,20 +10,12 @@ export default function Login() {
     const navigate = useNavigate();
 
     const [email, setEmail] = useState('');
-    const [pass, setPass] = useState('');
-    const LoginData = {
-        userId : email,
-        userPass: pass,
-    }
+    const [pw, setPw] = useState('');
 
-
-    const onSubmit = () => {
-        console.log(LoginData);
-    };
 
     return (
         <div style={{height: window.innerHeight}}>
-            <Header />
+            <Header/>
             <Container className="panel">
                 <Row style={{height: window.innerHeight / 4}}/>
                 <Row sm="1" className="justify-content-md-center" style={{margin: `0 20%`}}>
@@ -32,7 +25,7 @@ export default function Login() {
                             <Form.Control
                                 type="email"
                                 placeholder="kbreport@gmail.com"
-                                onChange={event => setEmail( event.target.value )}
+                                onChange={event => setEmail(event.target.value)}
                             />
                         </Form.Group>
                         <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
@@ -40,22 +33,28 @@ export default function Login() {
                             <Form.Control
                                 type="password"
                                 placeholder="비밀번호를 입력해주세요"
-                                onChange={event => setPass( event.target.value )}/>
+                                onChange={event => setPw(event.target.value)}/>
                         </Form.Group>
                     </Form>
                     <div/>
                     <div className="d-grid gap-1">
                         <Button
                             onClick={() => {
-                                if (LoginData.userId === "kbreport@gmail.com") {
-                                    onSubmit();
-                                    localStorage.setItem("userId", LoginData.userId);
-                                    navigate("/",
-                                        //     {state: {
-                                        //     loginData: LoginData
-                                        // }}
-                                    );
-                                } else {
+                                try {
+                                    let userEmail = ''
+                                    loginApi(email, pw)
+                                        .then((data) => {
+                                            userEmail = data;
+
+                                            localStorage.setItem("userId", userEmail);
+                                            navigate("/");
+
+                                        }).catch((error) => {
+                                            console.log(error);
+                                        });
+
+                                } catch (error) {
+                                    console.log(error)
                                     window.alert("회원정보가 올바르지 않습니다.")
                                 }
                             }}
