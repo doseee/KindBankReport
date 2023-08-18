@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    url: jdbc:mysql://kbreport.cinppxid5rbv.ap-northeast-2.rds.amazonaws.com:3306/kbreport?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: root
+    password: rootdailybaekjoon
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    open-in-view: false
+    show-sql: true # sql문 디버깅 필요할시 true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+      open-in-view: false
+  main:
+    allow-bean-definition-overriding: true
+gpt:
+  api-key: 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
+  url: https://api.openai.com/v1/completions
+  model: text-davinci-003
+  max-tokens: 1800
+  temperature: 0.3
+  top-p: 1
+  frequency-penalty: 0
+  presence-penalty: 0
