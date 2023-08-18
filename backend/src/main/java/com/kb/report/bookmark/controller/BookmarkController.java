@@ -33,7 +33,7 @@ public class BookmarkController {
     }
   }
 
-  @ApiOperation(value = "북마크 설정")
+  @ApiOperation(value = "북마크 조회")
   @GetMapping("search/{memberId}")
   public ResponseEntity<?> saveBookmark(@PathVariable String memberId) {
     try {
