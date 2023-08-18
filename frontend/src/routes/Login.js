@@ -1,7 +1,7 @@
 import {Container, Row, Col, Form, Button} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
 import {useState, useRef} from "react";
-import Header from "../component/header";
+import Header from "../component/Header";
 
 
 export default function Login() {
@@ -21,7 +21,7 @@ export default function Login() {
     };
 
     return (
-        <>
+        <div style={{height: window.innerHeight}}>
             <Header />
             <Container className="panel">
                 <Row style={{height: window.innerHeight / 4}}/>
@@ -68,6 +68,6 @@ export default function Login() {
                     </div>
                 </Row>
             </Container>
-        </>
+        </div>
     )
 }
