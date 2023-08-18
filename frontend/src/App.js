@@ -3,7 +3,6 @@ import {Nav, Navbar, Container, NavDropdown} from "react-bootstrap";
 import {Outlet, useLoaderData} from "react-router-dom";
 import Main from "./routes/Main";
 import Header from "./component/Header";
-import data from "./data";
 import articleData from "./services/articleDataApi";
 import {useState} from "react";
 
