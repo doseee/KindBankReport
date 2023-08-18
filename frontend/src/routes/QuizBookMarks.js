@@ -16,7 +16,7 @@ export default function QuizBookMarks() {
         document.body.style.overflow = "hidden";
 
         const memberId = localStorage.getItem("userId");
-        getQuizExplain("string")
+        getQuizExplain("kbreport@gmail.com")
             .then((data)=>
                 setBookMark(data)
             ).catch((error)=>console.log(error))
