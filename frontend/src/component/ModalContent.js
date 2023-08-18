@@ -1,17 +1,26 @@
-import {Col, Container, Row} from "react-bootstrap";
-import {AiOutlineClose} from "react-icons/ai";
-import * as styles from "../styles/Styles"
+import {Col, Row} from "react-bootstrap";
 import React from "react";
+import diff1 from "../assets/diffusion1.png";
+import diff2 from "../assets/diffusion2.png";
+
 
 export default function ModalContent({setModalIsOpen, textAlign, pageState, articles, height}: PropsType) {
     function PictureArticle(article, i) {
 
         if (pageState === 1) {
+            function pic(){
+                if(article.article.reportId===50){
+                    return diff1
+                } else {
+                    return diff2
+                }
+            }
+
             return (
                 <>
                     <Row className="text-box article-box sliding-card" >
                         <Col md={3} style={{
-                            backgroundImage: `url('https://t1.daumcdn.net/cfile/tistory/99B83F3B5B097F4E03')`,
+                            backgroundImage: `url(${pic()})`,
                             backgroundSize: `cover`,
                             marginBottom: `15px`
                         }}>
