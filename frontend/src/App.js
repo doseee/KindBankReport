@@ -4,15 +4,17 @@ import {Outlet, useLoaderData} from "react-router-dom";
 import Main from "./routes/Main";
 import Header from "./component/Header";
 import data from "./data";
+import articleData from "./services/articleDataApi";
+import {useState} from "react";
 
-// export async function loader() {
-//     const shoes = data;
-//     return { shoes };
-// }
+
 function App() {
 
     // let [shoes] = useState(data)
     // const { shoes } = useLoaderData();
+
+    // let [articles] = useState(articleData)
+    // const { articles } = useLoaderData();
 
     return (
         <div className="App">

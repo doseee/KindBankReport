@@ -1,12 +1,17 @@
 import React, {useState} from "react";
 import {Col, Row} from "react-bootstrap";
 import Question from "../assets/question.png";
+import {quizSave} from "../services/QuizApi";
 
-export default function Quiz() {
+export default function Quiz(props) {
     let windowHeightHalfEight = window.innerHeight / 30;
+
+    console.log(props)
 
     const [screenState, setscreenState] = useState(0); // 0: 퀴즈 표시 버튼, 1: 퀴즈 화면, 2: 해설 화면
     const [showPopup, setshowPopup] = useState(false);
+
+    const memberId = localStorage.getItem("userId");
 
     function QuizScreen() {
         if (screenState === 0) {
@@ -29,19 +34,19 @@ export default function Quiz() {
                 <Row ms={5} style={{height: windowHeightHalfEight * 26, padding: `0 30px 0 20px`}}>
                     <Col md={1}/>
                     <Col md={10}>
-                        <Row className="text-font-one" style={{textAlign: 'left'}}>
-                            문제문제문제문제문제문제문제문제문제문제문제문제문제문제문제문제문제문제문제문제문제문제문제문제문제문제문제문제문제문제문제문제문제문제문제문제
+                        <Row className="text-font-one" style={{textAlign: `center`, fontSize: `17px`, padding: `10px 0 0 15px`, fontWeight: `700`}}>
+                            {props.articles[1].question}
                         </Row>
-                        <Row style={{height: `50px`}}/>
+                        <Row style={{height: `40px`}}/>
                         <Row>
-                            <button onClick={() => setscreenState(2)} className="quiz-btn">
-                                정답1
+                            <button onClick={() => setscreenState(2)} className="quiz-btn" style={{fontSize: `13px`}}>
+                                {props.articles[1].ans1}
                             </button>
                         </Row>
-                        <Row style={{height: `25px`}}/>
+                        <Row style={{height: `30px`}}/>
                         <Row>
-                            <button onClick={() => setscreenState(2)} className="quiz-btn">
-                                정답2
+                            <button onClick={() => setscreenState(2)} className="quiz-btn" style={{fontSize: `13px`}}>
+                                {props.articles[1].ans2}
                             </button>
                         </Row>
                     </Col>
@@ -53,19 +58,24 @@ export default function Quiz() {
                 <Row ms={5} style={{height: windowHeightHalfEight * 26, padding: `0 30px 0 20px`}}>
                     <Col md={1}/>
                     <Col md={10} className="d-flex flex-column align-items-center justify-content-between" style={{ height: `260px`}}>
-                        <Row style={{height: `10px`}}/>
-                        <Row className="text-font-one" style={{ textAlign: 'left' }}>
-                            문제 해설문제 해설문제 해설문제 해설문제 해설문제 해설문제 해설문제 해설문제 해설문제 해설문제 해설문제 해설문제 해설문제 해설문제 해설
+
+                        <Row className="text-font-one scrollbar explan-text">
+                            {props.articles[1].explanation}
                         </Row>
-                        {/*<Row style={{height: `180px`}}/>*/}
+
                         <Row>
                             <button
                                 onClick={() => {
-                                    console.log("북마크 저장");
-                                    setshowPopup(true);
-                                    setTimeout(()=> {
-                                        setshowPopup(false);
-                                    }, 2000)
+                                    console.log(props.articles[1]);
+                                    quizSave(memberId, props.articles[1].reportId)
+                                        .then(()=>{
+                                            setshowPopup(true);
+                                            setTimeout(()=> {
+                                                setshowPopup(false);
+                                            }, 2000)
+                                        })
+                                        .catch((error) => console.log(error))
+
                                 }}
                                 className="quiz-btn text-font-two"
                                 style={{ backgroundColor: `rgba(244, 238, 221, 1)`, width: `300px`}}>

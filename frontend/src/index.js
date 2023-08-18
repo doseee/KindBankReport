@@ -8,11 +8,12 @@ import {
     RouterProvider
 } from "react-router-dom";
 import ErrorPage from "./error/error-page";
-import Main, {loader as rootLoader} from "./routes/Main";
+import Main from "./routes/Main";
 import Detail from "./routes/Detail";
 import Login from "./routes/Login";
 import ReportDetail from "./routes/ReportDetail"
 import QuizBookMarks from "./routes/QuizBookMarks";
+
 
 const router = createBrowserRouter([
     {
@@ -24,12 +25,10 @@ const router = createBrowserRouter([
                 index: true,
                 // path: "/main",
                 element: <Main/>,
-                // loader: rootLoader,
             },
             {
                 path: "/main",
                 element: <Main />,
-                // loader: rootLoader,
             },
             {
                 path: "detail/:detailId",

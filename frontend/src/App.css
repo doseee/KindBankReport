@@ -192,10 +192,14 @@ button {
 
 .text-box {
     width: 100%;
-    height: 80px;
+    height: 100px;
     overflow-y: auto !important;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
+}
+
+.text-box2 {
+    height: 90px;
 }
 
 .text-box::-webkit-scrollbar {
@@ -205,7 +209,7 @@ button {
 .article-box {
     height: 30%;
     background: #ffffff;
-    padding: 20px 30px 10px 30px;
+    padding: 15px 30px 15px 30px;
     border: none;
     border-radius: 15px;
     box-shadow: 8px 16px 16px hsl(0deg 0% 0% / 0.25);
@@ -280,23 +284,30 @@ button {
 .popup.show {
     top: 0;
 }
-/*.slide-buttons {*/
-/*  display: flex;*/
-/*  justify-content: center;*/
-/*  margin-top: 10px;*/
-/*}*/
 
-/*.slide-buttons button {*/
-/*  width: 10px;*/
-/*  height: 10px;*/
-/*  border-radius: 50%;*/
-/*  border: none;*/
-/*  margin: 0 5px;*/
-/*  cursor: pointer;*/
-/*  background-color: #ccc;*/
-/*  transition: background-color 0.3s;*/
-/*}*/
+.scrollbar {
+    width: 300px;
+    height: 140px;
+    overflow: auto;
+}
+.scrollbar::-webkit-scrollbar {
+    width: 10px;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgb(96, 88, 76);
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+.scrollbar::-webkit-scrollbar-track {
+    background-color: #FCAF17;
+    border-radius: 10px;
+    /*box-shadow: inset 0px 0px 5px white;*/
+}
 
-/*.slide-buttons button.active {*/
-/*  background-color: #FCAF17;*/
-/*}*/
+.explan-text {
+    text-align: justify;
+    height: 160px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
