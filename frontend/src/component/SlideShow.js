@@ -1,9 +1,9 @@
 // SlideShow.js
 import React, { useState, useEffect } from 'react';
 import Slide from './Slide'; // 슬라이드 쇼 스타일을 정의한 CSS 파일
-import h1 from '../assets/h1.jpg';
-import h2 from '../assets/h2.jpg';
-import h3 from '../assets/h3.jpg';
+import h1 from '../assets/info1.png';
+import h2 from '../assets/info2.png';
+import h3 from '../assets/info3.png';
 
 const images = [
     h1,

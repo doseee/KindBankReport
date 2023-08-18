@@ -3,6 +3,7 @@ import React, {useEffect, useState} from "react";
 import {Col, Row} from "react-bootstrap";
 import {getQuizExplain} from "../services/QuizApi";
 import Card from "../component/Card";
+import bm2 from "../assets/bm2.png";
 
 export default function QuizBookMarks() {
 
@@ -15,7 +16,7 @@ export default function QuizBookMarks() {
         document.body.style.overflow = "hidden";
 
         const memberId = localStorage.getItem("userId");
-        getQuizExplain("string")
+        getQuizExplain("kbreport@gmail.com")
             .then((data)=>
                 setBookMark(data)
             ).catch((error)=>console.log(error))
@@ -38,11 +39,12 @@ export default function QuizBookMarks() {
                         MY BOOKMARK
                     </Col>
                     <Col style={{textAlign: `right`, marginRight: `10%`, fontSize: `20px`}}>
-                        <button onClick={() => {
-                            console.log("쓸모가 없을까나..?")
-                        }}>
-                            Just.. Button
-                        </button>
+                        {/*<button onClick={() => {*/}
+                        {/*    console.log("쓸모가 없을까나..?")*/}
+                        {/*}}>*/}
+                        {/*    Just.. Button*/}
+                        {/*</button>*/}
+                        <img src={bm2} style={{width: `55px`}}/>
                     </Col>
                 </Row>
                 <div style={{height: `15px`}}/>
