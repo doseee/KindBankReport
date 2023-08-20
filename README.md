@@ -124,10 +124,7 @@
 
 ## ✅ 협업툴
 
-<img src="https://img.shields.io/badge/GitLab-d23f1f?style=flat-square&logo=Gitlab&logoColor=white"/> <br>
 <img src="https://img.shields.io/badge/Figma-f24e1e?style=flat-square&logo=Figma&logoColor=white"/> <br>
-<img src="https://img.shields.io/badge/Jira Software-0052CC?style=flat-square&logo=Jira Software&logoColor=white"/> <br>
-<img src="https://img.shields.io/badge/Mattermost-0058CC?style=flat-square&logo=Mattermost&logoColor=white"/> <br>
 <img src="https://img.shields.io/badge/Notion-000000?style=flat-square&logo=Notion&logoColor=white"/> <br>
 <img src="https://img.shields.io/badge/KakaoTalk-FFCD00?style=flat-square&logo=KakaoTalk&logoColor=white"/> <br>
 
@@ -139,7 +136,7 @@
 
 ## ✅ 협업 환경
 
-### GitLab
+### GitHub
 - 프로젝트 시작 전 커밋 컨벤션을 정한 후 협업
 
     <details>
@@ -174,26 +171,12 @@
 
 <br>
 
-### Jira
-- Story Point를 세분화하여 작업을 효율적으로 진행하기 위해 노력
-- 매주 일요일 오후 10시 지라 회의를 통해 매주 실현 가능한 계획 설계
-- Epic : 대분류 구분
-- Story : 구현 기능 구분
-- Task : 담당 일과 구분
-
-<br>
-
 ### Notion
 - 문서화가 필요한 자료 기록
 - 간트차트 작성
 - 회의록 작성
 - 참고자료 업로드
 - 기능구현 현황 파악
-
-<br>
-
-### WebEx
-- 이슈가 있을 경우 화상채팅으로 회의, 개발 진행
 
 <br>
 
